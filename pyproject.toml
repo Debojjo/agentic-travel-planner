@@ -1,0 +1,20 @@
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["venv"]
+
+[tool.ruff.lint]
+# E/W: pycodestyle (PEP 8), F: pyflakes, I: import order, D1: missing docstrings, N: naming, B: bugbear,
+# C901/PLR0912/PLR0915: keep functions small (complexity, branches, statements) so code stays modular
+select = ["E", "W", "F", "I", "D1", "N", "B", "C901", "PLR0912", "PLR0915"]
+ignore = ["D107", "D105"]  # no docstring needed for __init__ / magic methods
+
+[tool.ruff.lint.mccabe]
+max-complexity = 12
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "C901", "PLR0912", "PLR0915"]  # test names already describe behaviour
+"__init__.py" = ["F401"]  # re-exports
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

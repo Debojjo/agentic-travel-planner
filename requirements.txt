@@ -1,0 +1,10 @@
+# Runtime dependencies (Python 3.10+). This is the file a host such as Streamlit Community Cloud installs.
+# Exact versions the project was tested with: requirements-lock.txt. Test and lint tools: requirements-dev.txt.
+langchain>=1.0
+langchain-core>=1.0
+langchain-groq>=1.0
+pydantic>=2.0
+python-dotenv>=1.0
+requests>=2.31
+streamlit>=1.40
+pandas>=2.0
